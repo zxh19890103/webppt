@@ -1,13 +1,19 @@
+const webpack = require('webpack')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
-
+const config = require('./config')
 const MODE = 'development'
 
 module.exports = {
   mode: MODE,
-  entry: './src/index.ts',
+  entry: [
+    'webpack/hot/dev-server',
+    `webpack-dev-server/client?http://${config.host}:${config.port}`,
+    './src/index.ts'
+  ],
   output: {
-    path: path.resolve('./www/dist'),
+    path: path.resolve('./dist'),
     filename: '[name].bundle.js',
     chunkFilename: '[name].chunk.js',
   },
@@ -22,15 +28,19 @@ module.exports = {
       },
     ],
   },
-  plugins: [new CleanWebpackPlugin.CleanWebpackPlugin({})],
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new CleanWebpackPlugin.CleanWebpackPlugin({}),
+    new HtmlWebpackPlugin({
+      template: './www/index.html',
+      filename: 'index.html'
+    }),
+  ],
   optimization: {
     minimize: false,
-    moduleIds: 'named',
-    runtimeChunk: {
-      name: "runtime"
-    },
+    runtimeChunk: 'single',
     splitChunks: {
-      chunks: 'all',
+      chunks: "all"
     },
   },
 }
