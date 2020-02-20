@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "isolatedModules": false,
+    "esModuleInterop": true,
+    "target": "ESNext",
+    "module": "ESNext"
+  },
+  "include": ["./src/**/*"]
+}

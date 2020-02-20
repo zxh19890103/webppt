@@ -8,9 +8,9 @@ const MODE = 'development'
 module.exports = {
   mode: MODE,
   entry: [
-    'webpack/hot/dev-server',
+    'webpack/hot/dev-server?reload=true',
     `webpack-dev-server/client?http://${config.host}:${config.port}`,
-    './src/index.ts'
+    './src/index.ts',
   ],
   output: {
     path: path.resolve('./dist'),
@@ -26,6 +26,10 @@ module.exports = {
         test: /\.ts$/,
         use: 'babel-loader',
       },
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
     ],
   },
   plugins: [
@@ -33,14 +37,14 @@ module.exports = {
     new CleanWebpackPlugin.CleanWebpackPlugin({}),
     new HtmlWebpackPlugin({
       template: './www/index.html',
-      filename: 'index.html'
+      filename: 'index.html',
     }),
   ],
   optimization: {
     minimize: false,
     runtimeChunk: 'single',
     splitChunks: {
-      chunks: "all"
+      chunks: 'all',
     },
   },
 }

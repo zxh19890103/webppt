@@ -1,1 +1,3 @@
-console.log('App is here and now it was changedoo yy999.')
+import { n, add } from "./counter"
+add()
+document.body.innerHTML = `<h3>${n} yy mm</h3>`
