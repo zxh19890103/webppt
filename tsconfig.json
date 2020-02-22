@@ -1,9 +1,17 @@
 {
   "compilerOptions": {
+    "lib": [
+      "ESNext",
+      "ScriptHost",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "isolatedModules": false,
     "esModuleInterop": true,
     "target": "ESNext",
-    "module": "ESNext"
+    "module": "ESNext",
+    "sourceMap": true,
+    "types": []
   },
   "include": ["./src/**/*"]
 }

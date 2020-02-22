@@ -7,6 +7,7 @@ const MODE = 'development'
 
 module.exports = {
   mode: MODE,
+  devtool: 'eval-cheap-source-map',
   entry: [
     'webpack/hot/dev-server?reload=true',
     `webpack-dev-server/client?http://${config.host}:${config.port}`,
@@ -45,6 +46,13 @@ module.exports = {
     runtimeChunk: 'single',
     splitChunks: {
       chunks: 'all',
+      cacheGroups: {
+        react: {
+          test: /react/,
+          name: 'react',
+          priority: 1,
+        }
+      }
     },
   },
 }

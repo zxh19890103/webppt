@@ -1,4 +1,4 @@
-interface NodeModule {
+declare var module: {
   hot: {
     accept: Function
   }
