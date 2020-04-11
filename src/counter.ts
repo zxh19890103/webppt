@@ -4,7 +4,4 @@ const add = () => {
   n += 1
 }
 
-export {
-  n,
-  add
-}
+export { n, add }

@@ -6,6 +6,7 @@
       "DOM",
       "DOM.Iterable"
     ],
+    "allowJs": false,
     "isolatedModules": false,
     "esModuleInterop": true,
     "target": "ESNext",
@@ -13,5 +14,7 @@
     "sourceMap": true,
     "types": []
   },
-  "include": ["./src/**/*"]
+  "include": [
+    "./src/**/*"
+  ]
 }

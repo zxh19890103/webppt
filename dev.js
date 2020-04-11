@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const webpack = require('webpack')
 const webpackDevServer = require('webpack-dev-server')
 const webpackConfig = require(`./webpack.config`)
@@ -11,7 +12,7 @@ const server = new webpackDevServer(compiler, {
   hot: true,
   hotOnly: true,
   inline: true,
-  contentBase: ["./www/assets"],
+  contentBase: ['./www/assets'],
   stats: {
     colors: true,
   },

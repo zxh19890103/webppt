@@ -1,7 +1,7 @@
-import "core-js"
-import "./app"
+import 'core-js'
+import './app'
 
-import "./style.scss"
+import './style.scss'
 
 if (module.hot) {
   module.hot.accept()
