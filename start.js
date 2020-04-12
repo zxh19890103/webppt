@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const webpack = require("webpack")
 const webpackDevServer = require("webpack-dev-server")
-const webpackConfig = require(`./webpack.config`)
+const webpackConfig = require(`./webpack-dev.config`)
 
 const chalk = require("chalk")
 const config = require("./config")
@@ -14,7 +14,7 @@ const server = new webpackDevServer(compiler, {
 	// Enables Hot Module Replacement (see devServer.hot) without page refresh as a fallback in case of build failures.
 	hotOnly: false,
 	inline: true,
-	contentBase: ["./www/assets"],
+	contentBase: ["./www"],
 	stats: {
 		colors: true,
 	},

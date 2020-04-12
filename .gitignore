@@ -105,3 +105,6 @@ dist
 
 # Customized
 www/dist/
+www/static/
+www/dll/
+www/index.html

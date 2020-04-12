@@ -1,24 +1,11 @@
 const webpack = require("webpack")
-const CleanWebpackPlugin = require("clean-webpack-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const path = require("path")
-const config = require("./config")
-
-const env = process.env.NODE_ENV
-
-console.log("now the env is", env)
 
 module.exports = {
-	mode: env,
-	devtool: "eval-cheap-source-map",
-	entry: [
-		"webpack/hot/dev-server?reload=true",
-		`webpack-dev-server/client?http://${config.host}:${config.port}`,
-		"./src/index.tsx",
-	],
 	output: {
-		path: path.resolve("./dist"),
-		publicPath: "/",
+		path: path.resolve("./www/static"),
+		publicPath: "/static",
 		filename: "[name].bundle.js",
 		chunkFilename: "[name].chunk.js",
 	},
@@ -38,26 +25,17 @@ module.exports = {
 		],
 	},
 	plugins: [
-		new webpack.HotModuleReplacementPlugin(),
-		new CleanWebpackPlugin.CleanWebpackPlugin({}),
 		new HtmlWebpackPlugin({
-			template: "./www/index.html",
-			filename: "index.html",
+			template: "./www/_index.html",
+			filename: "../index.html",
+		}),
+		new webpack.DllReferencePlugin({
+			context: __dirname,
+			manifest: require("./www/dll/react.manifest.json"),
 		}),
 	],
 	optimization: {
-		minimize: false,
+		// minimize: true,
 		runtimeChunk: "single",
-		namedModules: true,
-		splitChunks: {
-			chunks: "all",
-			cacheGroups: {
-				react: {
-					test: /react/,
-					name: "react",
-					priority: 1,
-				},
-			},
-		},
 	},
 }
