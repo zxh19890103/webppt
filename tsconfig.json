@@ -1,20 +1,29 @@
 {
-  "compilerOptions": {
-    "lib": [
-      "ESNext",
-      "ScriptHost",
-      "DOM",
-      "DOM.Iterable"
-    ],
-    "allowJs": false,
-    "isolatedModules": false,
-    "esModuleInterop": true,
-    "target": "ESNext",
-    "module": "ESNext",
-    "sourceMap": true,
-    "types": []
-  },
-  "include": [
-    "./src/**/*"
-  ]
+	"compilerOptions": {
+		"lib": [
+			"ESNext",
+			"ScriptHost",
+			"DOM",
+			"DOM.Iterable"
+		],
+		"allowJs": false,
+		"jsx": "react",
+		// "jsxFactory": "React.createElement",
+		"isolatedModules": false,
+		"esModuleInterop": true,
+		"target": "ESNext",
+		"module": "ESNext",
+		"sourceMap": true,
+		"types": []
+	},
+	"include": [
+		"./src/**/*"
+	],
+	"typeAcquisition": {
+		"enable": false,
+		"include": [
+			"react",
+			"react-dom"
+		]
+	}
 }

@@ -1,6 +1,13 @@
 {
-  "editor.fontSize": 28,
-  "files.exclude": {
-    "**/node_modules": true
-  }
+	"editor.fontSize": 24,
+	"editor.tabSize": 4,
+	"editor.formatOnSave": false,
+	"editor.fontFamily": "Wawati SC",
+	"files.exclude": {
+		"**/node_modules": true
+	},
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true,
+		"source.fixAll.stylelint": true
+	},
 }

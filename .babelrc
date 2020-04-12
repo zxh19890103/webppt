@@ -1,31 +1,32 @@
 {
-  "presets": [
-    [
-      "@babel/env",
-      {
-        "useBuiltIns": "entry",
-        "corejs": {
-          "version": 3,
-          "proposals": true
-        }
-      }
-    ],
-    "@babel/typescript"
-  ],
-  "plugins": [
-    [
-      "@babel/plugin-transform-runtime",
-      {
-        // Defaults
-        "absoluteRuntime": false,
-        "corejs": 3,
-        "helpers": true,
-        "regenerator": false,
-        "useESModules": false,
-        "version": "7.0.0-beta.0"
-      }
-    ],
-    "@babel/proposal-class-properties",
-    "@babel/proposal-object-rest-spread"
-  ]
+	"presets": [
+		[
+			"@babel/env",
+			{
+				"useBuiltIns": "entry",
+				"corejs": {
+					"version": 3,
+					"proposals": true
+				}
+			}
+		],
+		"@babel/typescript",
+		"@babel/react"
+	],
+	"plugins": [
+		[
+			"@babel/plugin-transform-runtime",
+			{
+				// Defaults
+				"absoluteRuntime": false,
+				"corejs": 3,
+				"helpers": true,
+				"regenerator": false,
+				"useESModules": false,
+				"version": "7.0.0-beta.0"
+			}
+		],
+		"@babel/proposal-class-properties",
+		"@babel/proposal-object-rest-spread"
+	]
 }

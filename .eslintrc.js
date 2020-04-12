@@ -1,16 +1,28 @@
 module.exports = {
-  parser: '@typescript-eslint/parser', // Specifies the ESLint parser
-  extends: [
-    'plugin:@typescript-eslint/recommended', // Uses the recommended rules from the @typescript-eslint/eslint-plugin
-    'prettier/@typescript-eslint',
-    'plugin:prettier/recommended',
-  ],
-  parserOptions: {
-    ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
-    sourceType: 'module', // Allows for the use of imports
-  },
-  rules: {
-    // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
-    // e.g. "@typescript-eslint/explicit-function-return-type": "off",
-  },
+	parser: "@typescript-eslint/parser",
+	// eslint-config-prettier is a config that disables rules that conflict with Prettier. Add it to your
+	extends: [
+		"plugin:@typescript-eslint/recommended",
+		"prettier/@typescript-eslint",
+		"plugin:prettier/recommended",
+		"plugin:react/recommended",
+	],
+	// eslint-plugin-prettier is a plugin that adds a rule that formats content using Prettier
+	plugins: ["prettier", "@typescript-eslint", "react"],
+	parserOptions: {
+		ecmaVersion: 11,
+		// script | module
+		sourceType: "module",
+		ecmaFeatures: {
+			jsx: true,
+		},
+	},
+	rules: {
+		"prettier/prettier": "error",
+		"semi": ["error", "never"],
+		"react/jsx-uses-react": "error",
+		"react/jsx-uses-vars": "error",
+		"@typescript-eslint/explicit-function-return-type": "off",
+		"@typescript-eslint/no-var-requires": "off",
+	},
 }
