@@ -5,7 +5,7 @@ const path = require("path")
 module.exports = {
 	output: {
 		path: path.resolve("./www/static"),
-		publicPath: "/static",
+		publicPath: "/",
 		filename: "[name].bundle.js",
 		chunkFilename: "[name].chunk.js",
 	},
@@ -27,7 +27,7 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: "./www/_index.html",
-			filename: "../index.html",
+			filename: "index.html",
 		}),
 		new webpack.DllReferencePlugin({
 			context: __dirname,

@@ -2,7 +2,13 @@
 	"editor.fontSize": 24,
 	"editor.tabSize": 4,
 	"editor.formatOnSave": false,
-	"editor.fontFamily": "Wawati SC",
+	"editor.fontFamily": "Skia",
+	"editor.letterSpacing": 2,
+	"editor.detectIndentation": true,
+	"editor.renderWhitespace": "all",
+	"editor.renderIndentGuides": true,
+	"terminal.integrated.fontFamily": "monospace",
+	"terminal.integrated.letterSpacing": -1,
 	"files.exclude": {
 		"**/node_modules": true
 	},
