@@ -2,7 +2,7 @@
 	"editor.fontSize": 24,
 	"editor.tabSize": 2,
 	"editor.formatOnSave": false,
-	"editor.fontFamily": "Wawati SC",
+	"editor.fontFamily": "Chalkboard, Wawati SC",
 	"editor.letterSpacing": 0,
 	"editor.detectIndentation": true,
 	"editor.renderWhitespace": "none",

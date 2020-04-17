@@ -1,24 +1,36 @@
-const path = require("path")
 const webpack = require("webpack")
+const merge = require("webpack-merge")
+const CleanWebpackPlugin = require("clean-webpack-plugin").CleanWebpackPlugin
 
-module.exports = {
+const cfg = require("./config")
+const libraryName = "[name]_dll_lib"
+const dist = `${cfg.wwwDir}/dll`
+
+module.exports = merge({
 	mode: "production",
+	context: __dirname,
 	entry: {
 		react: ["react", "react-dom"],
 	},
 	output: {
-		path: path.join(__dirname, "./www/dll"),
+		path: dist,
 		filename: "[name].dll.js",
-		library: "[name]_dll_lib",
+		library: libraryName,
 		libraryTarget: "umd",
 	},
 	plugins: [
+		new CleanWebpackPlugin(),
+		new webpack.HashedModuleIdsPlugin({
+			hashDigest: "hex",
+			hashDigestLength: 7,
+			hashFunction: "md5",
+		}),
 		new webpack.DllPlugin({
 			context: __dirname,
-			path: path.join(__dirname, "./www/dll/[name].manifest.json"),
+			path: `${dist}/[name].manifest.json`,
 			entryOnly: true,
-			name: "[name]_dll_lib",
+			name: libraryName,
 			format: false,
 		}),
 	],
-}
+})

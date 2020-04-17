@@ -14,6 +14,7 @@ const server = new webpackDevServer(compiler, {
 	// Enables Hot Module Replacement (see devServer.hot) without page refresh as a fallback in case of build failures.
 	hotOnly: false,
 	inline: true,
+	publicPath: "/assets",
 	contentBase: ["./www"],
 	stats: {
 		colors: true,

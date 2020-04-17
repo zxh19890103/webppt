@@ -4,3 +4,5 @@ declare var module: {
 		accept: Function
 	}
 }
+
+declare var JsonPadCard: (mod: { default: Function }) => void

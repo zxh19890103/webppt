@@ -5,13 +5,15 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const TerserPlugin = require("terser-webpack-plugin")
 const CleanWebpackPlugin = require("clean-webpack-plugin")
 const wpConfig = require("./webpack.config")
+const cfg = require("./config")
 
 module.exports = merge(wpConfig, {
 	mode: "production",
-	entry: ["./src/index.tsx"],
+	entry: cfg.appEntry,
 	devtool: "#source-map",
 	output: {
 		filename: "[name].bundle.[hash:7].js",
+		publicPath: "/",
 		chunkFilename: "[name].chunk.[chunkhash:7].js",
 	},
 	module: {

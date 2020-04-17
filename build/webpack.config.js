@@ -1,13 +1,13 @@
 const webpack = require("webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const merge = require("webpack-merge")
-const path = require("path")
+
+const cfg = require("./config")
 
 module.exports = merge({
 	context: __dirname,
 	output: {
-		path: path.resolve("../www/static"),
-		publicPath: "/",
+		path: `${cfg.wwwDir}/static`,
 		filename: "[name].bundle.js",
 		chunkFilename: "[name].chunk.js",
 	},
@@ -33,16 +33,15 @@ module.exports = merge({
 			hashFunction: "md5",
 		}),
 		new HtmlWebpackPlugin({
-			template: "./www/_index.html",
+			template: cfg.indexTpl,
 			filename: "index.html",
 		}),
 		new webpack.DllReferencePlugin({
 			context: __dirname,
-			manifest: require("../www/dll/react.manifest.json"),
+			manifest: require(`${cfg.wwwDir}/dll/react.manifest.json`),
 		}),
 	],
 	optimization: {
-		// minimize: true,
 		runtimeChunk: "single",
 	},
 })
