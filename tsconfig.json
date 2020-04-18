@@ -1,29 +1,24 @@
 {
 	"compilerOptions": {
 		"lib": [
-			"ESNext",
+			"ES2020",
 			"ScriptHost",
 			"DOM",
 			"DOM.Iterable"
 		],
 		"allowJs": false,
 		"jsx": "react",
-		// "jsxFactory": "React.createElement",
 		"isolatedModules": false,
 		"esModuleInterop": true,
 		"target": "ESNext",
 		"module": "ESNext",
 		"sourceMap": true,
-		"types": []
+		"types": ["react", "react-dom", "core-js"]
 	},
 	"include": [
 		"./src/**/*"
 	],
 	"typeAcquisition": {
 		"enable": false,
-		"include": [
-			"react",
-			"react-dom"
-		]
 	}
 }

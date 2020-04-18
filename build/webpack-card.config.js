@@ -1,12 +1,9 @@
-const webpack = require("webpack")
 const merge = require("webpack-merge")
-const wpConfig = require("./webpack.config")
+const wpConfig = require("./webpack-shared.config")
 const cfg = require("./config")
 
-const component = "card"
-
 module.exports = merge(wpConfig, {
-	mode: "production",
+	mode: process.env.NODE_ENV,
 	entry: {
 		card: `../src/card.tsx`,
 		card2: `../src/card2.tsx`,
@@ -21,6 +18,6 @@ module.exports = merge(wpConfig, {
 	},
 	optimization: {
 		minimize: false,
-		runtimeChunk: false,
+		runtimeChunk: "single",
 	},
 })

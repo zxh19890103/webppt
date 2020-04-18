@@ -1,6 +1,6 @@
 const webpack = require("webpack")
 const merge = require("webpack-merge")
-const wpConfig = require("./webpack.config")
+const wpConfig = require("./webpack-shared.config")
 const cfg = require("./config")
 
 module.exports = merge(wpConfig, {
