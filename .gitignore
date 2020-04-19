@@ -109,3 +109,5 @@ www/static/
 www/dll/
 www/index.html
 www/cards/
+www/app/
+.DS_Store

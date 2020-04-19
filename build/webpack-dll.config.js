@@ -12,6 +12,7 @@ module.exports = merge({
 	entry: {
 		react: ["react", "react-dom"],
 	},
+	devtool: false,
 	output: {
 		path: dist,
 		filename: "[name].dll.js",
@@ -19,6 +20,7 @@ module.exports = merge({
 		libraryTarget: "umd",
 	},
 	plugins: [
+		new webpack.ProgressPlugin(),
 		new CleanWebpackPlugin(),
 		new webpack.HashedModuleIdsPlugin({
 			hashDigest: "hex",

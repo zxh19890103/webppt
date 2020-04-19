@@ -1,5 +1,6 @@
 const webpack = require("webpack")
 const merge = require("webpack-merge")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
 const wpConfig = require("./webpack-shared.config")
 const cfg = require("./config")
 
@@ -11,8 +12,14 @@ module.exports = merge(wpConfig, {
 		cfg.appEntry,
 	],
 	output: {
-		publicPath: "/assets",
+		publicPath: "/dev",
 	},
-	devtool: "#cheap-eval-source-map",
-	plugins: [new webpack.HotModuleReplacementPlugin()],
+	devtool: "#eval-cheap-module-source-map",
+	plugins: [
+		new HtmlWebpackPlugin({
+			template: cfg.indexTpl,
+			filename: "index.html",
+		}),
+		new webpack.HotModuleReplacementPlugin(),
+	],
 })

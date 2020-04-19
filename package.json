@@ -31,6 +31,7 @@
 		"stylelint-prettier": "^1.1.2",
 		"typescript": "^3.7.4",
 		"webpack": "^4.41.6",
+		"webpack-cli": "^3.3.11",
 		"webpack-dev-server": "^3.10.3",
 		"webpack-merge": "^4.2.2"
 	},
@@ -52,9 +53,11 @@
 	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "export NODE_ENV=development && node start",
-		"dll": "export NODE_ENV=production && node dll",
-		"build": "export NODE_ENV=production && node build",
+		"start": "export NODE_ENV=development && node build/start",
+		"dll": "export NODE_ENV=production && node build/dll",
+		"build": "export NODE_ENV=production && node build/build",
+		"build:cards": "export NODE_ENV=production && node build/card",
+		"start:cards": "export NODE_ENV=development && webpack-dev-server --config build/webpack-card.config",
 		"fix:code": "eslint --fix --ext .tsx,.ts,.js ./src/",
 		"fix:style": "stylelint --fix ./src/**/*"
 	},

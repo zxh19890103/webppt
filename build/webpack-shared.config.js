@@ -1,5 +1,4 @@
 const webpack = require("webpack")
-const HtmlWebpackPlugin = require("html-webpack-plugin")
 const merge = require("webpack-merge")
 
 const cfg = require("./config")
@@ -7,7 +6,7 @@ const cfg = require("./config")
 module.exports = merge({
 	context: __dirname,
 	output: {
-		path: `${cfg.wwwDir}/static`,
+		path: `${cfg.wwwDir}`,
 		filename: "[name].bundle.js",
 		chunkFilename: "[name].chunk.js",
 	},
@@ -27,14 +26,11 @@ module.exports = merge({
 		],
 	},
 	plugins: [
+		new webpack.ProgressPlugin(),
 		new webpack.HashedModuleIdsPlugin({
 			hashDigest: "hex",
 			hashDigestLength: 7,
 			hashFunction: "md5",
-		}),
-		new HtmlWebpackPlugin({
-			template: cfg.indexTpl,
-			filename: "index.html",
 		}),
 		new webpack.DllReferencePlugin({
 			context: __dirname,

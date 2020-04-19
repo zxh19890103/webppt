@@ -2,6 +2,7 @@ const merge = require("webpack-merge")
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const TerserPlugin = require("terser-webpack-plugin")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
 const CleanWebpackPlugin = require("clean-webpack-plugin")
 const wpConfig = require("./webpack-shared.config")
 const cfg = require("./config")
@@ -9,11 +10,11 @@ const cfg = require("./config")
 module.exports = merge(wpConfig, {
 	mode: "production",
 	entry: cfg.appEntry,
-	devtool: "#source-map",
+	devtool: false,
 	output: {
-		filename: "[name].bundle.[hash:7].js",
+		filename: "app/[name].bundle.js",
 		publicPath: "/",
-		chunkFilename: "[name].chunk.[chunkhash:7].js",
+		chunkFilename: "app/[name].chunk.js",
 	},
 	module: {
 		rules: [
@@ -24,10 +25,18 @@ module.exports = merge(wpConfig, {
 		],
 	},
 	plugins: [
-		new CleanWebpackPlugin.CleanWebpackPlugin({}),
+		new CleanWebpackPlugin.CleanWebpackPlugin({
+			dangerouslyAllowCleanPatternsOutsideProject: false,
+			cleanAfterEveryBuildPatterns: [],
+			cleanOnceBeforeBuildPatterns: ["app/*"],
+		}),
 		new MiniCssExtractPlugin({
-			filename: "[name].[chunkhash:7].css",
+			filename: "app/[name].css",
 			// chunkFilename: '[id].[chunkhash:7].css'
+		}),
+		new HtmlWebpackPlugin({
+			template: cfg.indexTpl,
+			filename: "index.html",
 		}),
 	],
 	optimization: {

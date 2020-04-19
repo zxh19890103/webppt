@@ -33,9 +33,7 @@ class AsyncCard extends React.Component<AsyncCardProps, AsyncCardState> {
 		document.head.appendChild(script)
 	}
 	render() {
-		console.log("render async")
 		if (this.state.loaded) {
-			console.log(this.card)
 			return React.createElement(this.card)
 		}
 		return <>等一等 🐸...</>

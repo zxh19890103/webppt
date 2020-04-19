@@ -12,7 +12,6 @@ const App = (props: { word: string }) => {
 		<div>
 			<h2>Hello, my {props.word}</h2>
 			<AsyncCard name="card" url={"/cards/card.js"} />
-			<AsyncCard name="card2" url={"/cards/card2.js"} />
 		</div>
 	)
 }
