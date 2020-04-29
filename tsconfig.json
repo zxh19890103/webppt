@@ -13,10 +13,10 @@
 		"target": "ESNext",
 		"module": "ESNext",
 		"sourceMap": true,
-		"types": ["react", "react-dom", "core-js"]
+		"types": ["react", "react-dom"]
 	},
 	"include": [
-		"./src/**/*"
+		"./src/**/*", "Animal.ts"
 	],
 	"typeAcquisition": {
 		"enable": false,

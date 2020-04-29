@@ -1,7 +1,7 @@
 module.exports = {
 	printWidth: 80,
 	useTabs: true,
-	tabWidth: 2,
+	tabWidth: 8,
 	semi: false,
 	singleQuote: false,
 	// as-needed | consistent | preserve
