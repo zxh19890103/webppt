@@ -25,7 +25,10 @@ class AsyncCard extends React.Component<AsyncCardProps, AsyncCardState> {
 			console.log("script.onload")
 			script.onload = null
 			setTimeout(() => {
-				this.card = window[`Card_${this.props.name}`].default
+				this.card =
+					window[
+						`Card_${this.props.name}`
+					].default
 				this.setState({ loaded: true })
 			}, 0)
 		}

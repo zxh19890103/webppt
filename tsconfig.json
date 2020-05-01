@@ -7,7 +7,6 @@
 			"DOM.Iterable"
 		],
 		"allowJs": false,
-		"jsx": "react",
 		"isolatedModules": false,
 		"esModuleInterop": true,
 		"target": "ESNext",
