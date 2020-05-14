@@ -28,7 +28,7 @@ module.exports = {
 			"error",
 			"tab",
 			{
-				baseIndent: 1,
+				baseIndent: 0,
 			},
 		],
 	},

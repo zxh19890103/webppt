@@ -1,1 +1,3 @@
-/www
+/www/*
+/**/node_modules/*
+.eslintrc.*

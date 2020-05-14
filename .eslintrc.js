@@ -10,7 +10,7 @@ module.exports = {
 	// eslint-plugin-prettier is a plugin that adds a rule that formats content using Prettier
 	plugins: ["prettier", "@typescript-eslint", "react"],
 	env: {
-		es6: true
+		es6: true,
 	},
 	parserOptions: {
 		ecmaVersion: 11,

@@ -1,17 +1,27 @@
 <template>
 	<div>{{ name }}</div>
 </template>
-
 <script>
-	export default {
-		data() {
-			return {
-				name: "Singhi",
-			}
+import H from "./h"
+export default {
+	components: { H },
+	props: {
+		ni: {
+			type: String,
+			default: "90",
 		},
-		methods: {
-			say() {
-			},
+	},
+	data() {
+		return {
+			name: "Singhi",
+		}
+	},
+	computed: {
+		hhh: () => "99",
+	},
+	methods: {
+		say() {
 		},
-	}
+	},
+}
 </script>

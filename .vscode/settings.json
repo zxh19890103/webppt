@@ -10,7 +10,7 @@
 	"editor.detectIndentation": true,
 	"editor.renderWhitespace": "none",
 	"editor.renderIndentGuides": true,
-	"editor.suggest.showWords": false,
+	"editor.suggest.showWords": true,
 	"terminal.integrated.letterSpacing": -1,
 	"files.exclude": {
 		"**/node_modules": true
@@ -23,10 +23,10 @@
 	"[vue]": {
 		"editor.defaultFormatter": "octref.vetur"
 	},
-	"editor.suggest.showKeywords": false,
+	"editor.suggest.showKeywords": true,
 	"vetur.format.defaultFormatter.css": "prettier",
 	"vetur.format.defaultFormatter.html": "prettyhtml",
 	"vetur.format.defaultFormatter.js": "prettier-eslint",
 	"vetur.format.options.useTabs": true,
-	"vetur.format.scriptInitialIndent": true
+	"vetur.format.scriptInitialIndent": false,
 }

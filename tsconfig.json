@@ -12,6 +12,9 @@
 		"target": "ESNext",
 		"module": "ESNext",
 		"sourceMap": true,
+		"noImplicitAny": true,
+		"noImplicitThis": true,
+		"strictFunctionTypes": false,
 		"types": ["react", "react-dom"]
 	},
 	"include": [
