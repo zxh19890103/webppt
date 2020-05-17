@@ -4,9 +4,10 @@
 		"javascriptreact",
 		"vue"
 	],
-	"editor.tabSize": 8,
-	"editor.formatOnSave": false,
+	"editor.tabSize": 2,
+	"editor.lineHeight": 32,
 	"editor.letterSpacing": 0,
+	"editor.formatOnSave": false,
 	"editor.detectIndentation": true,
 	"editor.renderWhitespace": "none",
 	"editor.renderIndentGuides": true,
